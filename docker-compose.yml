@@ -1,0 +1,20 @@
+version: "3"
+services:
+  stably:
+    image: datnguyen.stably.test/primenumber:latest
+    restart: always
+    volumes:
+      - .:/stably_test
+    ports:
+      - 3100:3100
+    networks:
+      - stably_test-network
+  stably_dash:
+    image: stably_dashboard:latest
+    restart: always
+    ports:
+      - 8080:80
+    networks:
+      - stably_test-network
+networks:
+  stably_test-network:

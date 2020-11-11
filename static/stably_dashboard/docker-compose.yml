@@ -1,0 +1,12 @@
+version: "3"
+services:
+  stably_dashboard:
+    image: stably_dashboard:latest
+    restart: always
+    ports:
+      - 8080:80
+    networks:
+      - stably_test-network
+
+networks:
+  stably_test-network:
